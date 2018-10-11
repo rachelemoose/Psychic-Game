@@ -31,7 +31,7 @@ document.onkeyup = function(event) {
         };
         if (playerGuess !== computerGuess) {
             guesses--;
-            lettersGuessed = [];
+            lettersGuessed.push(playerGuess);
             console.log("Player guessed " + playerGuess + " which was wrong")
         };
         if (guesses === 0) {
@@ -40,21 +40,8 @@ document.onkeyup = function(event) {
             alert("I'm sorry, you are not a psychic. Try again!")
         };
         guessesText.textContent = "Guesses Left: " + guesses; 
-        guessesDoneText.innerHTML = "Your guesses so far: " + lettersGuessed.join(", ");
+        guessesDoneText.innerHTML = "Your guesses so far: " + lettersGuessed.join(', ');
         winsText.textContent = "Wins: " + wins;
         lossesText.textContent = "Losses: " + losses;
     };
         
-
-
-
-
-    // guessesText.textContent = "Guesses Left: " + i--; 
-// };
-
-// learned this needs to be IN my function
-// guessesDoneText.textContent = "Your guesses so far: " + playerGuess; 
-// winsText.textContent = "Wins: " + wins;
-// lossesText.textContent = "Losses: " + losses;
-// var i = 9;
-// guessesText.textContent = "Guesses Left: " + i--; 
