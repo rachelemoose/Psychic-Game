@@ -18,14 +18,17 @@ var playerGuess;
 var computerGuess;
 var lettersGuessed = [];
 
-//need to make computerguess store one variable per game 
-computerGuess = computerchoices[Math.floor(Math.random() * computerchoices.length)];
-console.log(computerGuess)
+
+
+
 document.onkeyup = function(event) {
+    computerGuess = computerchoices[Math.floor(Math.random() * computerchoices.length)];
+    console.log("Computer guessed: " + computerGuess)
     playerGuess = event.key;
     if (playerGuess === computerGuess) {
             wins++;
             guesses = 9;
+            lettersGuessed = [];
             console.log(playerGuess + " was correct");
             alert("You're a psychic! You guessed " + playerGuess + " which is exactly what I was thinking!")
         };
@@ -37,6 +40,7 @@ document.onkeyup = function(event) {
         if (guesses === 0) {
             losses++;
             guesses = 9;
+            lettersGuessed = [];
             alert("I'm sorry, you are not a psychic. Try again!")
         };
         guessesText.textContent = "Guesses Left: " + guesses; 
